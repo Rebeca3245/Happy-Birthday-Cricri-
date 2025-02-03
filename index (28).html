@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 18 Anos, Rilary!</title>
+    <!-- Inclua o SDK do EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <!-- Inclua o Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inclua as fontes modernas do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        // Inicialize o EmailJS com seu User ID
+        (function() {
+            emailjs.init("jskDT6zx1ekOlL8md"); // Substitua pelo seu User ID
+        })();
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #e91e63; /* Rosa pink */
+            margin-top: 20px;
+            letter-spacing: 1.5px;
+        }
+
+        .photo-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-section img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .button {
+            background-color: #e91e63; /* Rosa pink */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            flex: 1 1 auto;
+            max-width: 200px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d81b60; /* Rosa pink mais escuro */
+            transform: translateY(-2px);
+        }
+
+        .nested-buttons {
+            display: none;
+            margin-top: 10px;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nested-buttons .button {
+            background-color: #ff69b4; /* Rosa pink claro */
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            max-width: 150px;
+        }
+
+        .nested-buttons .button:hover {
+            background-color: #ff5aa3; /* Rosa pink claro mais escuro */
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #e91e63; /* Rosa pink */
+            font-family: 'Playfair Display', serif;
+        }
+
+        .wish-section {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wish-section textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid #e91e63; /* Rosa pink */
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            resize: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .wish-section .button {
+            background-color: #4caf50; /* Verde para contraste */
+            max-width: none;
+        }
+
+        .wish-section .button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .hearts span {
+            position: absolute;
+            color: #e91e63; /* Rosa pink */
+            font-size: 20px;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        /* Estilo do botão de música redondo */
+        #musicButton {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e91e63; /* Rosa pink */
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #musicButton:hover {
+            background-color: #d81b60; /* Rosa pink mais escuro */
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .photo-section img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nested-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HAPPY BIRTHDAY, CRICRI! 🎉</h1>
+
+    <div class="photo-section">
+        <img src="IMG_0090.jpg" alt="Foto da Rilary">
+    </div>
+
+    <!-- Botão de Música Redondo -->
+    <button id="musicButton" onclick="toggleMusic()">
+        <i class="fas fa-play"></i> <!-- Ícone de play -->
+    </button>
+
+    <div class="buttons">
+        <!-- Botão Família -->
+        <button class="button" onclick="toggleNestedButtons('familyButtons')">Família</button>
+        <!-- Botão Amigas -->
+        <button class="button" onclick="toggleNestedButtons('friendsButtons')">Amigas</button>
+        <!-- Botão Faça um Pedido -->
+        <button class="button" onclick="showWishSection()">Faça um Pedido!</button>
+    </div>
+
+    <!-- Botões Aninhados da Família -->
+    <div id="familyButtons" class="nested-buttons">
+        <button class="button" onclick="showMessage('Filha, meu amor! Lembre-se sempre de que você é mais em todos os sentidos: mais corajosa, mais forte, mais inteligente e mais amada do que imagina. Eu profetizo que você realizará seus objetivos, e vamos comemorar suas vitórias sempre juntas. Beijos, filha! Te amo!')">Claudiana (Mamãe)</button>
+        <button class="button" onclick="showMessage('Feliz aniversário, Riri! Queria dizer que te amo mais do que você pode imaginar e mais do que eu consigo demonstrar. Você é uma menina sensacional, e todo mundo deveria ter a chance de te conhecer. Você sempre dá o seu melhor, e eu sei que terá um futuro brilhante pela frente. Você é como uma luz ambulante, sempre tentando iluminar a vida das pessoas que conhece, fazer com que elas riam e estando sempre disposta a ajudar. Tenho muito orgulho de você, e sei que todos que te conhecem também. Que você viva, que ame, que chore, que ria, mas que sempre lembre que estou aqui para você. Jamais ouse pensar que precisa passar por tudo sozinha, mas, se por acaso sentir que tem que fazer isso, lembre-se de que somos nós duas, desde sempre e para sempre.')">Layra (Irmã)</button>
+        <button class="button" onclick="showMessage('Me pediram para escrever sobre o quanto você é especial para a minha vida e, sinceramente, eu fiquei nervosa. Passei várias horas pensando no que dizer, porque é difícil colocar em palavras o que você realmente significa para mim. A verdade é que sua presença trouxe luz, alegria e um tipo raro de amor sincero, capaz de transformar meus dias. Você tem um jeito especial de acolher, de entender, de fazer tudo parecer mais leve. Sua amizade é um presente que a vida me deu, e sou imensamente grata por isso. Você tem um coração gigante, e nele cabem todos que têm a sorte de te conhecer, mas eu sei que, às vezes, ele vem acompanhado de uma dose extra de intensidade! Seu jeito estressado é quase uma marca registrada. E sabe de uma coisa? Esse é um dos seus encantos! Porque o mundo precisa de pessoas genuínas como você, que vivem tudo com intensidade e nunca perdem a essência do que realmente são. Desejo, do fundo do meu coração, que nossa amizade continue florescendo, superando distâncias e o tempo. Obrigada por ser quem você é. Hoje e sempre, saiba que você é uma das pessoas mais especiais da minha vida. Com todo meu carinho, Rianny.')">Rianny (Prima)</button>
+        <button class="button" onclick="showMessage('Filha, não sou muito de falar o que sinto, mas o que sinto é 1000% verdadeiro. Como você sabe, faço tudo por você e para você! Crescer bem é o mais importante, e o resto só depende de você. Te amo!')">Douglas (Papai)</button>
+    </div>
+
+    <!-- Botões Aninhados das Amigas -->
+    <div id="friendsButtons" class="nested-buttons">
+        <button class="button" onclick="showMessage('Minha princesa, a felicidade que sinto escrevendo isso para você é indescritível. Desde o sétimo ano, percebo um padrão em você, um padrão de valentia, ousadia e sensibilidade, do seu jeitinho único. Você já cresceu tanto, e não sei se consegue enxergar isso. O quanto você é iluminada, cheia de sonhos, cheia de graça. Olho para você e vejo uma flecha, você alcança pessoas, e talvez nem perceba, mas você alcança. São seis anos de amizade, e eu não poderia querer completar esses seis anos com outra pessoa. Te amo e amo demais! Que este seja o ano mais rico em bênçãos na sua vida. Que você se permita viver coisas extraordinárias, que o novo não te assuste, que palavras não te parem e que não haja nenhum momento em que você se sinta desamparada. Que você se lembre de que é amada… já estou chorando de novo! Hahaha. Que você nunca esqueça o quanto é importante, o quanto é rodeada de pessoas que te amam e querem o seu bem. Que você se fortaleça a cada dia, a cada segundo de cada minuto, até alcançar o ápice de uma vida incrível e cheia de surpresas. E você, sendo valente, vai encarar tudo de frente e, no final, vai dizer: Consegui! E eu desejo, do fundo do meu coração, que possa estar lá para ver você conseguir, e então celebrar com você todas as suas conquistas. Feliz aniversário, Cricri! Xoxo, Beca.')">Rebequinha</button>
+        <button class="button" onclick="showMessage('Querida Cricri, você foi o maior e melhor presente que Deus poderia ter me dado ao longo do ensino médio (você e a Rebequinha). Sem sombra de dúvidas, você é sinônimo de um coração humilde, ensinável, bondoso, caridoso… e tantas outras qualidades. Cricri, quando passei por uma fase difícil, você foi a única amiga que soube e me deu um suporte que eu nunca imaginaria receber. Isso define quem você é: uma menina de coração puro e leal às suas amizades. Nesse momento, percebi que encontrei o tesouro mais precioso que poderia procurar VOCÊ (Eclesiastes 6:14). Você é o ferro que me afia e me torna uma amiga melhor (Provérbios 27:17). Você é a irmã que encontrei quando estava em um momento ruim (Provérbios 17:17). Você é a minha amiga, a quem sou apegada como irmã (Provérbios 18:24). Te amo, Cricri, e quero que entenda que não precisa suportar o peso da vida sozinha. Você sempre terá a mim, mesmo de longe, mesmo de perto, mesmo a 1 km de distância. Meu coração é seu, onde quer que eu esteja, em qualquer fase da vida. Te amo em todos os idiomas, modos, maneiras e jeitos. Obrigada por ser você! (depois pesquisa os versículos)')">Thatazinha</button>
+    </div>
+
+    <div id="messageDisplay" class="message"></div>
+
+    <!-- Seção de Desejo -->
+    <div id="wishSection" class="wish-section" style="display: none;">
+        <textarea id="wishInput" placeholder="Escreva seu desejo aqui..."></textarea>
+        <div class="buttons">
+            <button class="button" onclick="lockWish()">Trancar Desejo</button>
+            <button id="unlockButton" class="button" disabled onclick="unlockWish()">Desejo Realizado!</button>
+        </div>
+    </div>
+
+    <!-- Áudio para a música -->
+    <audio id="backgroundMusic" loop>
+        <source src="bruno.mp3.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Corações Flutuantes -->
+    <div class="hearts" id="heartsContainer"></div>
+
+    <script>
+        // Função para controlar a música
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const musicButton = document.getElementById('musicButton');
+
+            if (music.paused) {
+                music.play();
+                musicButton.innerHTML = '<i class="fas fa-pause"></i>'; // Ícone de pause
+            } else {
+                music.pause();
+                musicButton.innerHTML = '<i class="fas fa-play"></i>'; // Ícone de play
+            }
+        }
+
+        // Função para enviar o desejo por e-mail
+        function sendEmail(wish) {
+            const templateParams = {
+                wish: wish, // Texto do desejo
+                to_email: "elenrebeca280@gmail.com, thaisfernandesrod@gmail.com" // Substitua pelos e-mails desejados
+            };
+
+            emailjs.send("service_wyc4rvk", "template_7gth358", templateParams)
+                .then(function(response) {
+                    console.log("E-mail enviado com sucesso!", response.status, response.text);
+                }, function(error) {
+                    console.error("Erro ao enviar e-mail:", error);
+                });
+        }
+
+        // Função para trancar o desejo e enviar por e-mail
+        function lockWish() {
+            const wishInput = document.getElementById('wishInput').value;
+            if (wishInput.trim() === '') {
+                alert('Por favor, escreva um desejo antes de trancar.');
+                return;
+            }
+
+            // Armazena a data atual no localStorage
+            const lockDate = new Date().getTime();
+            localStorage.setItem('wishLockDate', lockDate);
+
+            // Desabilita o campo de texto e o botão de trancar
+            document.getElementById('wishInput').disabled = true;
+            document.getElementById('unlockButton').disabled = true;
+
+            // Feedback visual
+            const messageDisplay = document.getElementById('messageDisplay');
+            messageDisplay.innerText = 'Desejo trancado com sucesso! Volte daqui a 30 dias. 🎉';
+            messageDisplay.style.color = '#e91e63';
+
+            // Envia o desejo por e-mail
+            sendEmail(wishInput);
+
+            // Verifica periodicamente se já se passaram 30 dias
+            checkWishUnlock();
+        }
+
+        // Função para verificar se já se passaram 30 dias
+        function checkWishUnlock() {
+            const lockDate = localStorage.getItem('wishLockDate');
+            if (!lockDate) return;
+
+            const currentDate = new Date().getTime();
+            const thirtyDaysInMillis = 30 * 24 * 60 * 60 * 1000;
+
+            if (currentDate - lockDate >= thirtyDaysInMillis) {
+                // Habilita o botão "Desejo Realizado!" após 30 dias
+                document.getElementById('unlockButton').disabled = false;
+                const messageDisplay = document.getElementById('messageDisplay');
+                messageDisplay.innerText = 'Seu desejo pode ser realizado agora! 🎉';
+                messageDisplay.style.color = '#e91e63';
+            } else {
+                // Continua verificando
+                setTimeout(checkWishUnlock, 1000); // Verifica a cada segundo
+            }
+        }
+
+        // Função para desbloquear o desejo
+        function unlockWish() {
+            alert('Parabéns! Seu desejo se realizou! 🎉');
+            document.getElementById('wishInput').disabled = false;
+            document.getElementById('wishInput').value = '';
+            document.getElementById('unlockButton').disabled = true;
+            document.getElementById('wishSection').style.display = 'none';
+            localStorage.removeItem('wishLockDate'); // Remove a data do localStorage
+        }
+
+        // Função para exibir ou ocultar mensagens
+        function showMessage(message) {
+            const messageDisplay = document.getElementById('messageDisplay');
+            if (messageDisplay.innerText === message) {
+                messageDisplay.innerText = ''; // Remove a mensagem se já estiver exibida
+            } else {
+                messageDisplay.innerText = message; // Exibe a mensagem
+            }
+        }
+
+        // Função para alternar a visibilidade dos botões aninhados
+        function toggleNestedButtons(id) {
+            const nestedButtons = document.getElementById(id);
+            nestedButtons.style.display = nestedButtons.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Função para exibir a seção de desejo
+        function showWishSection() {
+            document.getElementById('wishSection').style.display = 'block';
+            document.getElementById('wishSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Função para criar corações flutuantes
+        function createHearts() {
+            const heartsContainer = document.getElementById('heartsContainer');
+
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('span');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+         
+        createHearts();
+
+         
+        window.onload = function() {
+            checkWishUnlock();
+        };
+    </script>
+
+</body>
+</html>
